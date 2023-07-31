@@ -15,7 +15,7 @@ jobs:
     name: "Build"
     runs-on: ubuntu-latest
     concurrency:
-      group: "${{ env.DOCKER_REGISTRY }}/${{ env.CREATE_IMAGE_NAME }}:${{github.ref_name}}"
+      group: "${DOCKER_REGISTRY}/${CREATE_IMAGE_NAME}:${{github.ref_name}}"
       cancel-in-progress: true
     steps:
       - name: "⬇ Checkout"
