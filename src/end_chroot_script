@@ -30,3 +30,4 @@ fi
 #cleanup
 apt-get clean
 apt-get autoremove -y
+sed -iE -e "s/.+$(hostname)//" /etc/hosts

@@ -16,6 +16,8 @@ install_cleanup_trap
 if [ "${EDITBASE_DISTRO}" == "ubuntu" ]; then
   #unpack /filesystem/ubuntu / root
 
+  echo "127.0.1.1    $(hostname)" >> /etc/hosts
+
   mv /etc/resolv.conf /etc/resolv.conf.orig || true
   echo "nameserver 8.8.8.8" > /etc/resolv.conf
   echo "nameserver 8.8.4.4" >> /etc/resolv.conf
@@ -61,7 +63,7 @@ fi
 
 apt-get update --allow-releaseinfo-change
 if [ $( is_in_apt policykit-1 ) -eq 1 ]; then
-  sudo apt-get -y install policykit-1
+  apt-get -y install policykit-1
 fi
 
 # prevent any installed services from automatically starting
