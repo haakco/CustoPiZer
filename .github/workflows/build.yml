@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_REGISTRY: ghcr.io/octoprint
+  DOCKER_REGISTRY: ghcr.io/haakco
   CREATE_IMAGE_NAME: custopizer
 
 jobs:
